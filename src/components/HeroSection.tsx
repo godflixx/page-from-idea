@@ -8,12 +8,12 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <div className="inline-block px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-medium">
+            <div className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-cyan-300 text-sm font-medium">
               TAILORED AI SOLUTIONS
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
               Empowering<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                 Business with AI
               </span>
             </h1>
@@ -27,24 +27,24 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400">18M+</div>
+              <div className="text-2xl font-bold text-cyan-400">18M+</div>
               <div className="text-sm text-white/60">Total Revenue</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400">92%</div>
+              <div className="text-2xl font-bold text-cyan-400">92%</div>
               <div className="text-sm text-white/60">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400">20+</div>
+              <div className="text-2xl font-bold text-cyan-400">20+</div>
               <div className="text-sm text-white/60">Languages Used</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400">24/7</div>
+              <div className="text-2xl font-bold text-cyan-400">24/7</div>
               <div className="text-sm text-white/60">Customer Support</div>
             </div>
           </div>
           
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300">
+          <Button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300">
             Get Started
           </Button>
         </div>
@@ -53,7 +53,7 @@ const HeroSection = () => {
         <div className="relative">
           <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
             {/* Background glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
             
             {/* Robot Head Container */}
             <div className="relative w-80 h-80">
@@ -62,14 +62,14 @@ const HeroSection = () => {
                 {/* Head silhouette */}
                 <div className="relative w-64 h-80">
                   {/* Head outline */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-300 to-slate-600 opacity-90" 
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-300 to-blue-600 opacity-90" 
                        style={{
                          clipPath: 'polygon(30% 0%, 70% 0%, 85% 30%, 85% 70%, 70% 100%, 30% 100%, 15% 70%, 15% 30%)'
                        }}>
                   </div>
                   
                   {/* Inner head details */}
-                  <div className="absolute inset-4 bg-gradient-to-br from-slate-400 to-slate-700 opacity-80"
+                  <div className="absolute inset-4 bg-gradient-to-br from-cyan-400 to-blue-700 opacity-80"
                        style={{
                          clipPath: 'polygon(30% 0%, 70% 0%, 85% 30%, 85% 70%, 70% 100%, 30% 100%, 15% 70%, 15% 30%)'
                        }}>
@@ -87,42 +87,42 @@ const HeroSection = () => {
                   </div>
 
                   {/* Neck/Connection */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-8 bg-gradient-to-b from-slate-500 to-slate-700"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-8 bg-gradient-to-b from-cyan-500 to-blue-700"></div>
                 </div>
               </div>
 
               {/* Floating Tech Elements */}
               <div className="absolute top-8 -left-16 animate-bounce">
-                <div className="bg-blue-500/20 backdrop-blur-sm rounded-lg p-3 border border-blue-400/30">
-                  <div className="w-6 h-6 bg-blue-400 rounded-sm mb-2"></div>
-                  <div className="w-8 h-1 bg-blue-400 rounded"></div>
+                <div className="bg-cyan-500/20 backdrop-blur-sm rounded-lg p-3 border border-cyan-400/30">
+                  <div className="w-6 h-6 bg-cyan-400 rounded-sm mb-2"></div>
+                  <div className="w-8 h-1 bg-cyan-400 rounded"></div>
                 </div>
               </div>
 
               <div className="absolute top-16 -right-20 animate-bounce" style={{animationDelay: '0.7s'}}>
-                <div className="bg-cyan-500/20 backdrop-blur-sm rounded-lg p-3 border border-cyan-400/30">
-                  <div className="w-4 h-4 bg-cyan-400 rounded-full mb-2"></div>
-                  <div className="w-6 h-1 bg-cyan-400 rounded"></div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-12 -left-12 animate-bounce" style={{animationDelay: '1.4s'}}>
-                <div className="bg-blue-600/20 backdrop-blur-sm rounded-lg p-3 border border-blue-500/30">
-                  <div className="grid grid-cols-2 gap-1 mb-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  </div>
+                <div className="bg-blue-500/20 backdrop-blur-sm rounded-lg p-3 border border-blue-400/30">
+                  <div className="w-4 h-4 bg-blue-400 rounded-full mb-2"></div>
                   <div className="w-6 h-1 bg-blue-400 rounded"></div>
                 </div>
               </div>
 
-              <div className="absolute bottom-8 -right-16 animate-bounce" style={{animationDelay: '2.1s'}}>
+              <div className="absolute bottom-12 -left-12 animate-bounce" style={{animationDelay: '1.4s'}}>
                 <div className="bg-cyan-600/20 backdrop-blur-sm rounded-lg p-3 border border-cyan-500/30">
-                  <div className="w-8 h-2 bg-cyan-400 rounded mb-1"></div>
-                  <div className="w-6 h-1 bg-cyan-400 rounded mb-1"></div>
-                  <div className="w-4 h-1 bg-cyan-400 rounded"></div>
+                  <div className="grid grid-cols-2 gap-1 mb-2">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                  </div>
+                  <div className="w-6 h-1 bg-cyan-400 rounded"></div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-8 -right-16 animate-bounce" style={{animationDelay: '2.1s'}}>
+                <div className="bg-blue-600/20 backdrop-blur-sm rounded-lg p-3 border border-blue-500/30">
+                  <div className="w-8 h-2 bg-blue-400 rounded mb-1"></div>
+                  <div className="w-6 h-1 bg-blue-400 rounded mb-1"></div>
+                  <div className="w-4 h-1 bg-blue-400 rounded"></div>
                 </div>
               </div>
 
