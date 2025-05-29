@@ -28,7 +28,7 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Right Content - Robot Illustration */}
+        {/* Right Content - Realistic Robot Illustration */}
         <div className="relative">
           <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
             {/* Glow effect */}
@@ -42,7 +42,7 @@ const HeroSection = () => {
                   {/* Eyes */}
                   <div className="flex justify-between items-center pt-6 px-6">
                     <div className="w-6 h-6 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
-                    <div className="w-6 h-6 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50" style={{animationDelay: '0.5s'}}></div>
+                    <div className="w-6 h-6 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
                   </div>
                   {/* Mouth/Speaker */}
                   <div className="mt-4 mx-auto w-16 h-3 bg-gray-600 rounded-full"></div>
@@ -63,9 +63,9 @@ const HeroSection = () => {
                     </div>
                     {/* Control buttons */}
                     <div className="grid grid-cols-3 gap-2 mb-4">
-                      <div className="w-6 h-6 bg-red-400 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                      <div className="w-6 h-6 bg-yellow-400 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
-                      <div className="w-6 h-6 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.9s'}}></div>
+                      <div className="w-6 h-6 bg-red-400 rounded-full animate-pulse"></div>
+                      <div className="w-6 h-6 bg-yellow-400 rounded-full animate-pulse"></div>
+                      <div className="w-6 h-6 bg-blue-400 rounded-full animate-pulse"></div>
                     </div>
                     {/* Display screen */}
                     <div className="w-full h-12 bg-black rounded border-2 border-cyan-400 relative overflow-hidden">
@@ -106,21 +106,21 @@ const HeroSection = () => {
               </div>
 
               {/* Floating UI Elements */}
-              <div className="absolute top-4 -left-12 animate-float">
+              <div className="absolute top-4 -left-12 animate-bounce">
                 <div className="bg-cyan-400/20 backdrop-blur-sm rounded-lg p-2 border border-cyan-400/30">
                   <div className="text-xs text-cyan-400 font-mono">NEURAL NET</div>
                   <div className="w-8 h-1 bg-cyan-400 rounded mt-1"></div>
                 </div>
               </div>
 
-              <div className="absolute top-16 -right-16 animate-float" style={{animationDelay: '1s'}}>
+              <div className="absolute top-16 -right-16 animate-bounce" style={{animationDelay: '1s'}}>
                 <div className="bg-purple-400/20 backdrop-blur-sm rounded-lg p-2 border border-purple-400/30">
                   <div className="text-xs text-purple-400 font-mono">ML CORE</div>
                   <div className="w-8 h-1 bg-purple-400 rounded mt-1"></div>
                 </div>
               </div>
 
-              <div className="absolute bottom-8 -left-8 animate-float" style={{animationDelay: '2s'}}>
+              <div className="absolute bottom-8 -left-8 animate-bounce" style={{animationDelay: '2s'}}>
                 <div className="bg-pink-400/20 backdrop-blur-sm rounded-lg p-2 border border-pink-400/30">
                   <div className="text-xs text-pink-400 font-mono">AGI</div>
                   <div className="w-6 h-1 bg-pink-400 rounded mt-1"></div>
@@ -136,16 +136,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 };
