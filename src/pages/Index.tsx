@@ -1,5 +1,5 @@
 
-import Navigation from "@/components/Navigation";
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AIVisualization from "@/components/AIVisualization";
 
@@ -15,7 +15,7 @@ const Index = () => {
       </div>
       
       <div className="relative z-10">
-        <Navigation />
+        <Header />
         <HeroSection />
         <AIVisualization />
       </div>
