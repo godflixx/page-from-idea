@@ -36,21 +36,21 @@ const Header = () => {
               Services
             </Link>
             <div className="relative group">
-              <a href="/blog" className="text-white/90 hover:text-cyan-300 transition-colors font-medium flex items-center">
+              <Link to="/blog" className="text-white/90 hover:text-cyan-300 transition-colors font-medium flex items-center">
                 Blog
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
+              </Link>
               <div className="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-blue-800/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4">
                   <h3 className="text-white font-semibold mb-3">Insights & Technology</h3>
-                  <a href="/blog/generative-ai" className="block text-white/80 hover:text-cyan-300 transition-colors mb-2 text-sm">
+                  <Link to="/blog/generative-ai" className="block text-white/80 hover:text-cyan-300 transition-colors mb-2 text-sm">
                     Generative AI Documentation
-                  </a>
-                  <a href="/blog/ai-insights" className="block text-white/80 hover:text-cyan-300 transition-colors text-sm">
+                  </Link>
+                  <Link to="/blog/ai-insights" className="block text-white/80 hover:text-cyan-300 transition-colors text-sm">
                     AI Technology Insights
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -97,12 +97,12 @@ const Header = () => {
               <Link to="/services" className="block px-3 py-2 text-white/90 hover:text-cyan-300 hover:bg-white/5 rounded-md transition-colors">
                 Services
               </Link>
-              <a href="/blog" className="block px-3 py-2 text-white/90 hover:text-cyan-300 hover:bg-white/5 rounded-md transition-colors">
+              <Link to="/blog" className="block px-3 py-2 text-white/90 hover:text-cyan-300 hover:bg-white/5 rounded-md transition-colors">
                 Blog
-              </a>
-              <a href="/blog/generative-ai" className="block px-6 py-2 text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 rounded-md transition-colors">
+              </Link>
+              <Link to="/blog/generative-ai" className="block px-6 py-2 text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 rounded-md transition-colors">
                 Generative AI Documentation
-              </a>
+              </Link>
               <div className="pt-4 space-y-2">
                 <Button 
                   variant="outline" 
