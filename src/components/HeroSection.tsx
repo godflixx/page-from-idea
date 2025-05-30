@@ -60,7 +60,7 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/3fd65315-57fa-44d6-bfe1-6a4e394c1c24.png" 
                 alt="AI Brain Gear Technology" 
-                className="w-full max-w-md h-auto object-contain animate-pulse"
+                className="w-full max-w-md h-auto object-contain animate-pulse rounded-full"
               />
             </div>
 
