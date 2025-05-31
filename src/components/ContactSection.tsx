@@ -56,47 +56,47 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-slate-900/50 to-blue-900/50 backdrop-blur-sm">
+    <section className="py-16 bg-card/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Touch</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">Touch</span>
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your business with AI? Let's discuss your project and explore how we can help you achieve your goals.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border-blue-800/30">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white text-2xl">Send us a message</CardTitle>
+              <CardTitle className="text-foreground text-2xl">Send us a message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="name" className="text-white">Name</Label>
+                    <Label htmlFor="name" className="text-foreground">Name</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-white/10 border-blue-800/30 text-white placeholder:text-white/50"
+                      className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                       placeholder="Your name"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email" className="text-white">Email</Label>
+                    <Label htmlFor="email" className="text-foreground">Email</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-white/10 border-blue-800/30 text-white placeholder:text-white/50"
+                      className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                       placeholder="your@email.com"
                       required
                     />
@@ -104,26 +104,26 @@ const ContactSection = () => {
                 </div>
                 
                 <div>
-                  <Label htmlFor="subject" className="text-white">Subject</Label>
+                  <Label htmlFor="subject" className="text-foreground">Subject</Label>
                   <Input
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="bg-white/10 border-blue-800/30 text-white placeholder:text-white/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                     placeholder="Project inquiry"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message" className="text-white">Message</Label>
+                  <Label htmlFor="message" className="text-foreground">Message</Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-white/10 border-blue-800/30 text-white placeholder:text-white/50 min-h-[120px]"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground min-h-[120px]"
                     placeholder="Tell us about your project..."
                     required
                   />
@@ -131,7 +131,7 @@ const ContactSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                 >
                   Send Message
                 </Button>
@@ -142,16 +142,16 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border-blue-800/30">
+              <Card key={index} className="bg-card border-border">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg mb-1">{info.title}</h3>
-                      <p className="text-white/90 font-medium mb-1">{info.content}</p>
-                      <p className="text-white/60 text-sm">{info.description}</p>
+                      <h3 className="text-foreground font-semibold text-lg mb-1">{info.title}</h3>
+                      <p className="text-foreground font-medium mb-1">{info.content}</p>
+                      <p className="text-muted-foreground text-sm">{info.description}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -31,16 +31,16 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16">
+      <section className="pt-20 pb-16 bg-gradient-to-r from-primary/5 to-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Insights</span>
+          <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+            AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">Insights</span>
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore the latest insights, documentation, and technology trends in artificial intelligence and machine learning.
           </p>
         </div>
@@ -51,37 +51,37 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.map((post) => (
-              <Card key={post.id} className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border-blue-800/30 hover:bg-white/15 dark:hover:bg-white/10 transition-all duration-300 group">
+              <Card key={post.id} className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">
+                    <span className="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full border border-primary/30">
                       {post.category}
                     </span>
-                    <div className="flex items-center text-white/60 text-sm">
+                    <div className="flex items-center text-muted-foreground text-sm">
                       <Calendar className="w-4 h-4 mr-2" />
                       {post.date}
                     </div>
                   </div>
-                  <CardTitle className="text-white text-xl group-hover:text-cyan-300 transition-colors">
+                  <CardTitle className="text-foreground text-xl group-hover:text-primary transition-colors">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-white/70">
+                  <CardDescription className="text-muted-foreground">
                     {post.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-white/60 mb-6">
+                  <p className="text-muted-foreground mb-6">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-white/60 text-sm">
+                    <div className="flex items-center text-muted-foreground text-sm">
                       <User className="w-4 h-4 mr-2" />
                       {post.author}
                     </div>
-                    <span className="text-white/60 text-sm">{post.readTime}</span>
+                    <span className="text-muted-foreground text-sm">{post.readTime}</span>
                   </div>
                   <Link to={`/blog/${post.id}`}>
-                    <Button variant="outline" className="w-full mt-4 border-cyan-400/50 text-cyan-300 hover:bg-cyan-400/10">
+                    <Button variant="outline" className="w-full mt-4 border-primary/50 text-primary hover:bg-primary/10">
                       Read More <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>

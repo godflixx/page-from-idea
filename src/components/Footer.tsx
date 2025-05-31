@@ -36,7 +36,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-sm border-t border-blue-800/30">
+    <footer className="bg-card/80 backdrop-blur-sm border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12">
@@ -44,24 +44,24 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                  <div className="w-5 h-5 bg-white rounded-full"></div>
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-5 h-5 bg-primary-foreground rounded-full"></div>
                 </div>
-                <span className="text-white text-xl font-bold">A.I.WORLD</span>
+                <span className="text-foreground text-xl font-bold">A.I.WORLD</span>
               </div>
-              <p className="text-white/70 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Pioneering the future of technology with innovative AI solutions and cutting-edge development services.
               </p>
               <div className="space-y-3">
-                <div className="flex items-center text-white/60">
+                <div className="flex items-center text-muted-foreground">
                   <Mail className="w-4 h-4 mr-3" />
                   <span className="text-sm">contact@aiworld.com</span>
                 </div>
-                <div className="flex items-center text-white/60">
+                <div className="flex items-center text-muted-foreground">
                   <Phone className="w-4 h-4 mr-3" />
                   <span className="text-sm">+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-center text-white/60">
+                <div className="flex items-center text-muted-foreground">
                   <MapPin className="w-4 h-4 mr-3" />
                   <span className="text-sm">Silicon Valley, CA</span>
                 </div>
@@ -70,11 +70,11 @@ const Footer = () => {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <h3 className="text-foreground font-semibold mb-4">Company</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-white/60 hover:text-cyan-300 transition-colors text-sm">
+                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.name}
                     </a>
                   </li>
@@ -84,11 +84,11 @@ const Footer = () => {
 
             {/* Services Links */}
             <div>
-              <h3 className="text-white font-semibold mb-4">Services</h3>
+              <h3 className="text-foreground font-semibold mb-4">Services</h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-white/60 hover:text-cyan-300 transition-colors text-sm">
+                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.name}
                     </a>
                   </li>
@@ -98,17 +98,17 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div>
-              <h3 className="text-white font-semibold mb-4">Stay Updated</h3>
-              <p className="text-white/60 text-sm mb-4">
+              <h3 className="text-foreground font-semibold mb-4">Stay Updated</h3>
+              <p className="text-muted-foreground text-sm mb-4">
                 Subscribe to our newsletter for the latest AI insights and tech updates.
               </p>
               <div className="space-y-3">
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-white/10 border-blue-800/30 text-white placeholder:text-white/50"
+                  className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                 />
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                   Subscribe
                 </Button>
               </div>
@@ -116,12 +116,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="bg-blue-800/30" />
+        <Separator className="bg-border" />
 
         {/* Bottom Footer */}
         <div className="py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-white/60 text-sm">
+            <div className="text-muted-foreground text-sm">
               © {currentYear} A.I.WORLD. All rights reserved.
             </div>
             
@@ -131,7 +131,7 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
-                    className="text-white/60 hover:text-cyan-300 transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -140,10 +140,10 @@ const Footer = () => {
               </div>
               
               <div className="flex space-x-6">
-                <a href="/privacy" className="text-white/60 hover:text-cyan-300 transition-colors text-sm">
+                <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Privacy Policy
                 </a>
-                <a href="/terms" className="text-white/60 hover:text-cyan-300 transition-colors text-sm">
+                <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Terms of Service
                 </a>
               </div>
