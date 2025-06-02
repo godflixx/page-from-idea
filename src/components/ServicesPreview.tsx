@@ -1,45 +1,54 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Code, Database, Globe, Smartphone, Shield } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
+import { useState } from "react";
 
 const ServicesPreview = () => {
+  const [selectedService, setSelectedService] = useState(0);
+
   const services = [
     {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Custom AI solutions and intelligent automation to transform your business processes.",
-      color: "bg-accent"
+      title: "Mobile App Development",
+      content: {
+        title: "Mobile App Development",
+        description: "We create innovative mobile applications that deliver exceptional user experiences across iOS and Android platforms. Our team specializes in native and cross-platform development using cutting-edge technologies like React Native and Flutter. From concept to deployment, we ensure your mobile app stands out in the competitive marketplace with intuitive design, robust functionality, and seamless performance."
+      }
     },
     {
-      icon: Code,
-      title: "Web Development",
-      description: "Modern, responsive web applications built with cutting-edge technologies.",
-      color: "bg-accent-700"
+      title: "Application Development",
+      content: {
+        title: "Application Development", 
+        description: "Our comprehensive application development services cover everything from web applications to enterprise software solutions. We leverage modern frameworks and best practices to build scalable, secure, and maintainable applications that drive business growth. Whether you need a simple web app or a complex enterprise system, our experienced developers deliver solutions tailored to your specific requirements."
+      }
     },
     {
-      icon: Smartphone,
-      title: "Mobile Applications",
-      description: "Native and cross-platform mobile apps that deliver exceptional experiences.",
-      color: "bg-green-500"
+      title: "DevOps",
+      content: {
+        title: "DevOps",
+        description: "Streamline your development and deployment processes with our DevOps expertise. We implement continuous integration and continuous deployment (CI/CD) pipelines, infrastructure automation, and monitoring solutions that enhance collaboration between development and operations teams. Our DevOps practices reduce deployment time, improve reliability, and enable faster time-to-market for your applications."
+      }
     },
     {
-      icon: Database,
-      title: "Data Analytics",
-      description: "Transform raw data into actionable insights with advanced analytics.",
-      color: "bg-yellow-500"
+      title: "Certified Google Cloud Partner",
+      content: {
+        title: "Certified Google Cloud Partner",
+        description: "As a certified Google Cloud Partner, we provide expert cloud solutions and migration services. Our team helps businesses leverage Google Cloud Platform's powerful infrastructure, machine learning capabilities, and data analytics tools. From cloud architecture design to implementation and optimization, we ensure your cloud journey is smooth, secure, and cost-effective."
+      }
     },
     {
-      icon: Globe,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services for modern businesses.",
-      color: "bg-purple-500"
+      title: "Managed Services",
+      content: {
+        title: "Managed Services",
+        description: "Focus on your core business while we handle your IT infrastructure. Our managed services include 24/7 monitoring, maintenance, security management, and technical support. We proactively identify and resolve issues before they impact your business, ensuring optimal performance, security, and reliability of your IT systems with predictable monthly costs."
+      }
     },
     {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Comprehensive security solutions to protect your digital assets.",
-      color: "bg-red-500"
+      title: "IT Staffing",
+      content: {
+        title: "IT Staffing",
+        description: "We provide a wide range of IT Staffing services to help companies efficiently source top-tier technology professionals across various specialties and industries. Whether you need a temporary, contract, or permanent position filled, we offer access to a deep pool of highly experienced and vetted IT experts. We specialize in connecting businesses with skilled professionals in software development, network engineering, cybersecurity, data analytics, cloud computing, and project management. Our personalized approach ensures we understand your specific needs and provide candidates who perfectly align with your goals, culture, and long-term vision. Chipsy's IT Staffing solutions make accessing talent seamless and cost-effective."
+      }
     }
   ];
 
@@ -48,42 +57,68 @@ const ServicesPreview = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
-            <span>OUR SERVICES</span>
-          </div>
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6">
-            Comprehensive Technology
-            <span className="text-accent block">Solutions</span>
+            Services <span className="text-accent">We offer</span>
           </h2>
           <p className="text-muted-foreground text-lg lg:text-xl max-w-3xl mx-auto">
-            We offer end-to-end technology services to accelerate your digital transformation 
-            and drive sustainable business growth.
+            Transform Your Business with Our End-to-End IT Solutions
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="bg-background border-border hover:shadow-xl transition-all duration-300 group cursor-pointer">
-              <CardHeader className="pb-4">
-                <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7 text-white" />
+        {/* Services Content */}
+        <div className="grid lg:grid-cols-12 gap-8">
+          {/* Left Sidebar - Services List */}
+          <div className="lg:col-span-4">
+            <Card className="bg-background border-border overflow-hidden">
+              <CardContent className="p-0">
+                <div className="border-l-4 border-accent pl-6 py-6">
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      className={`py-3 px-4 cursor-pointer transition-all duration-300 rounded-lg mb-2 ${
+                        selectedService === index
+                          ? 'bg-accent/10 text-accent border-l-2 border-accent'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                      }`}
+                      onClick={() => setSelectedService(index)}
+                    >
+                      <div className="flex items-center">
+                        <span className="text-accent mr-2">■</span>
+                        <span className="font-medium">{service.title}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <CardTitle className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground text-base mb-6 leading-relaxed">
-                  {service.description}
-                </CardDescription>
-                <Button variant="ghost" className="text-accent hover:text-accent-700 hover:bg-accent/10 p-0 h-auto font-semibold group/btn">
-                  Learn More 
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </CardContent>
             </Card>
-          ))}
+          </div>
+
+          {/* Right Content - Service Details */}
+          <div className="lg:col-span-8">
+            <Card className="bg-background border-border h-full">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                    <Users className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {services[selectedService].content.title}
+                  </h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {services[selectedService].content.description}
+                  </p>
+                  
+                  <Button className="bg-accent hover:bg-accent-700 text-white px-6 py-3 font-semibold transition-all duration-300">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* CTA */}
