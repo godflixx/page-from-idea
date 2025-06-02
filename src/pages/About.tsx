@@ -32,17 +32,17 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 dark:from-slate-950 dark:via-blue-950 dark:to-indigo-950">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">A.I.WORLD</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+              About <span className="text-accent">A.I.WORLD</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Pioneering the future of technology with innovative AI solutions and cutting-edge development services.
             </p>
           </div>
@@ -50,11 +50,11 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {stats.map((stat, index) => (
-              <Card key={index} className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border-blue-800/30 text-center">
+              <Card key={index} className="bg-card border-border text-center">
                 <CardContent className="p-6">
-                  <stat.icon className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-white/70">{stat.label}</div>
+                  <stat.icon className="w-8 h-8 text-accent mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-foreground mb-2">{stat.value}</div>
+                  <div className="text-muted-foreground">{stat.label}</div>
                 </CardContent>
               </Card>
             ))}
@@ -67,16 +67,16 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Our Story</h2>
-              <p className="text-white/80 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Our Story</h2>
+              <p className="text-muted-foreground mb-6">
                 Founded with a vision to democratize artificial intelligence and advanced technology solutions, 
                 A.I.WORLD has grown from a small startup to a leading technology partner for businesses worldwide.
               </p>
-              <p className="text-white/80 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Our journey began with a simple belief: that every organization, regardless of size, should have 
                 access to cutting-edge technology solutions that drive growth and innovation.
               </p>
-              <p className="text-white/80">
+              <p className="text-muted-foreground">
                 Today, we continue to push the boundaries of what's possible, delivering transformative solutions 
                 that help our clients stay ahead in an ever-evolving digital landscape.
               </p>
@@ -96,18 +96,18 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Our Values</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Values</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do and shape our culture.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="bg-white/10 dark:bg-white/5 backdrop-blur-sm border-blue-800/30">
+              <Card key={index} className="bg-card border-border">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
-                  <p className="text-white/70">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">{value.title}</h3>
+                  <p className="text-muted-foreground">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
