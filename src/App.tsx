@@ -8,8 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
-import Blog from "./pages/Blog";
-import GenerativeAI from "./pages/GenerativeAI";
+import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,9 +24,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/generative-ai" element={<GenerativeAI />} />
-            <Route path="/blog/ai-insights" element={<Blog />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
