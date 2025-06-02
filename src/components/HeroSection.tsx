@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star } from "lucide-react";
+import { Play, Star } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -30,12 +30,8 @@ const HeroSection = () => {
             smarter future with intelligent technology for informed business decisions.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button className="bg-accent hover:bg-accent-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl group">
-              Get Started
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
             <Button variant="outline" className="border-2 border-muted-foreground/20 text-foreground hover:bg-muted/50 px-8 py-3 text-lg font-semibold transition-all duration-300 group">
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Watch Demo
