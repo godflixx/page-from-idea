@@ -23,12 +23,12 @@ const Header = () => {
   };
 
   const services = [
-    { name: "AI & Machine Learning", href: "/services#ai-ml" },
-    { name: "Web Development", href: "/services#web-dev" },
-    { name: "Mobile Applications", href: "/services#mobile" },
-    { name: "Data Analytics", href: "/services#data-analytics" },
-    { name: "Cloud Solutions", href: "/services#cloud" },
-    { name: "Cybersecurity", href: "/services#cybersecurity" },
+    { name: "AI & Machine Learning", href: "/services/ai-machine-learning" },
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "Mobile Applications", href: "/services/mobile-applications" },
+    { name: "Data Analytics", href: "/services/data-analytics" },
+    { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+    { name: "Cybersecurity", href: "/services/cybersecurity" },
   ];
 
   return (
