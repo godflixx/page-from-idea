@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database } from "lucide-react";
 
 const WebDevelopment = () => {
@@ -49,6 +49,33 @@ const WebDevelopment = () => {
       icon: Settings,
       title: "Custom Solutions",
       description: "Tailored web solutions designed specifically for your business requirements."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What types of websites do you develop?",
+      answer: "We develop various types of websites including corporate websites, e-commerce platforms, web applications, content management systems, portfolios, and custom web solutions. We specialize in responsive, SEO-friendly, and high-performance websites."
+    },
+    {
+      question: "How long does it take to build a website?",
+      answer: "Development time depends on complexity and features. Simple websites take 2-4 weeks, while complex web applications can take 2-6 months. We provide detailed timelines after understanding your requirements during the consultation phase."
+    },
+    {
+      question: "Do you provide website maintenance and updates?",
+      answer: "Yes, we offer ongoing maintenance services including security updates, content updates, performance optimization, backup management, and technical support. We have various maintenance packages to suit different needs and budgets."
+    },
+    {
+      question: "Will my website be mobile-friendly and responsive?",
+      answer: "Absolutely! All our websites are built with a mobile-first approach and are fully responsive across all devices and screen sizes. We ensure optimal user experience on desktops, tablets, and smartphones."
+    },
+    {
+      question: "Do you help with SEO and digital marketing?",
+      answer: "Yes, we implement SEO best practices during development including proper site structure, meta tags, fast loading speeds, and clean code. We can also integrate analytics tools and provide guidance on digital marketing strategies."
+    },
+    {
+      question: "Can you redesign our existing website?",
+      answer: "Certainly! We can redesign existing websites to improve aesthetics, functionality, and performance. We can work with your current content and migrate to modern technologies while preserving your brand identity and improving user experience."
     }
   ];
 
@@ -121,6 +148,28 @@ const WebDevelopment = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

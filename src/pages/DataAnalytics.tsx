@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database, BarChart } from "lucide-react";
 
 const DataAnalytics = () => {
@@ -49,6 +49,33 @@ const DataAnalytics = () => {
       icon: Globe,
       title: "Custom Solutions",
       description: "Tailored analytics solutions designed for your specific business needs."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What types of data can you analyze?",
+      answer: "We can analyze various types of data including customer data, sales data, financial records, website analytics, social media metrics, operational data, and IoT sensor data. We work with structured and unstructured data from multiple sources."
+    },
+    {
+      question: "How do you ensure data privacy and security?",
+      answer: "We implement strict data security measures including encryption, access controls, compliance with GDPR and other regulations, secure data transfer protocols, and anonymization techniques. Your data privacy and security are our top priorities."
+    },
+    {
+      question: "What tools and technologies do you use for analytics?",
+      answer: "We use industry-leading tools including Python, R, SQL, Tableau, Power BI, Apache Spark, TensorFlow, and cloud platforms like AWS, Azure, and Google Cloud. We select the best tools based on your specific requirements and data volume."
+    },
+    {
+      question: "How long does a typical analytics project take?",
+      answer: "Project duration varies based on scope and complexity. Simple analytics dashboards take 2-4 weeks, while comprehensive analytics systems can take 2-6 months. We provide detailed timelines during the initial consultation."
+    },
+    {
+      question: "Can you integrate analytics with our existing systems?",
+      answer: "Yes, we specialize in seamless integration with existing systems, databases, CRM platforms, ERP systems, and third-party applications. We ensure your analytics solution works harmoniously with your current technology stack."
+    },
+    {
+      question: "Do you provide training on analytics tools and dashboards?",
+      answer: "Absolutely! We provide comprehensive training for your team including dashboard usage, report interpretation, best practices, and ongoing support. We ensure your team can effectively utilize the analytics solutions we deliver."
     }
   ];
 
@@ -121,6 +148,28 @@ const DataAnalytics = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database, Brain } from "lucide-react";
 
 const AIMachineLearning = () => {
@@ -49,6 +49,33 @@ const AIMachineLearning = () => {
       icon: Globe,
       title: "End-to-End Solutions",
       description: "Complete AI solutions from strategy and development to deployment and maintenance."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What AI and ML services do you offer?",
+      answer: "We offer comprehensive AI/ML services including predictive analytics, natural language processing, computer vision, recommendation systems, chatbots, automated decision-making systems, and custom machine learning model development tailored to your business needs."
+    },
+    {
+      question: "Do I need a large dataset to implement AI solutions?",
+      answer: "Not necessarily. While larger datasets generally improve model accuracy, we can work with smaller datasets using techniques like transfer learning, data augmentation, and synthetic data generation. We'll assess your data and recommend the best approach."
+    },
+    {
+      question: "How long does it take to develop an AI solution?",
+      answer: "Development time varies based on complexity. Simple AI implementations may take 2-4 months, while complex ML systems can take 6-12 months. This includes data preparation, model development, testing, and deployment phases."
+    },
+    {
+      question: "Can AI solutions integrate with our existing systems?",
+      answer: "Yes, we design AI solutions to seamlessly integrate with your existing infrastructure through APIs, cloud platforms, and custom connectors. We ensure minimal disruption to your current operations while maximizing the benefits of AI."
+    },
+    {
+      question: "What kind of ROI can we expect from AI implementation?",
+      answer: "ROI varies by use case but typically includes cost reduction through automation, increased efficiency, better decision-making, and new revenue opportunities. We provide detailed ROI projections during the consultation phase based on your specific objectives."
+    },
+    {
+      question: "Do you provide training for our team on AI systems?",
+      answer: "Absolutely! We provide comprehensive training programs covering system usage, best practices, and ongoing maintenance. We also offer documentation, workshops, and ongoing support to ensure your team can effectively utilize the AI solutions."
     }
   ];
 
@@ -121,6 +148,28 @@ const AIMachineLearning = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database, Cloud } from "lucide-react";
 
 const CloudSolutions = () => {
@@ -49,6 +49,33 @@ const CloudSolutions = () => {
       icon: Globe,
       title: "Multi-Cloud Support",
       description: "Expertise across AWS, Azure, Google Cloud, and hybrid environments."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "Which cloud platforms do you work with?",
+      answer: "We work with all major cloud platforms including Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and hybrid cloud solutions. We help you choose the best platform based on your specific needs, budget, and technical requirements."
+    },
+    {
+      question: "How do you handle data migration to the cloud?",
+      answer: "We follow a comprehensive migration strategy including data assessment, migration planning, testing, and gradual transition to minimize downtime. We ensure data integrity, security, and compliance throughout the entire migration process."
+    },
+    {
+      question: "What are the cost implications of moving to the cloud?",
+      answer: "Cloud costs vary based on usage, storage, and services required. Generally, cloud solutions offer cost savings through reduced infrastructure maintenance, scalability, and pay-as-you-use models. We provide detailed cost analysis and optimization strategies."
+    },
+    {
+      question: "How do you ensure cloud security and compliance?",
+      answer: "We implement multi-layered security including encryption, access controls, network security, regular audits, and compliance with industry standards like SOC 2, HIPAA, and GDPR. Security is built into every aspect of our cloud solutions."
+    },
+    {
+      question: "Can you help with cloud optimization and cost reduction?",
+      answer: "Yes, we provide ongoing cloud optimization services including resource rightsizing, cost monitoring, performance tuning, and automated scaling. We help you maximize efficiency while minimizing costs through continuous optimization."
+    },
+    {
+      question: "What support do you provide after cloud migration?",
+      answer: "We offer comprehensive post-migration support including 24/7 monitoring, maintenance, troubleshooting, performance optimization, security updates, and ongoing consultation to ensure your cloud infrastructure operates smoothly."
     }
   ];
 
@@ -121,6 +148,28 @@ const CloudSolutions = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

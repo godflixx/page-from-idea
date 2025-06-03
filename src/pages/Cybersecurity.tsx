@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database, Lock } from "lucide-react";
 
 const Cybersecurity = () => {
@@ -49,6 +49,33 @@ const Cybersecurity = () => {
       icon: Globe,
       title: "Industry Compliance",
       description: "Expertise in various compliance frameworks and industry standards."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What cybersecurity services do you provide?",
+      answer: "We provide comprehensive cybersecurity services including security assessments, penetration testing, incident response, threat monitoring, security training, compliance consulting, network security, endpoint protection, and security strategy development."
+    },
+    {
+      question: "How do you conduct security assessments?",
+      answer: "Our security assessments include vulnerability scanning, penetration testing, risk analysis, compliance auditing, and security policy review. We provide detailed reports with prioritized recommendations and remediation strategies."
+    },
+    {
+      question: "Do you help with compliance requirements?",
+      answer: "Yes, we help organizations achieve and maintain compliance with various standards including GDPR, HIPAA, SOC 2, ISO 27001, PCI DSS, and industry-specific regulations. We provide gap analysis, implementation guidance, and ongoing compliance monitoring."
+    },
+    {
+      question: "What should we do if we experience a security breach?",
+      answer: "Contact us immediately for incident response. We provide 24/7 emergency response including breach containment, forensic analysis, damage assessment, regulatory notification assistance, and recovery planning to minimize impact and prevent future incidents."
+    },
+    {
+      question: "How often should we conduct security assessments?",
+      answer: "We recommend quarterly vulnerability assessments and annual comprehensive security audits. However, frequency depends on your risk profile, industry requirements, and regulatory obligations. High-risk organizations may need more frequent assessments."
+    },
+    {
+      question: "Do you provide cybersecurity training for employees?",
+      answer: "Yes, we offer comprehensive cybersecurity awareness training including phishing simulation, security best practices, incident reporting procedures, and role-specific training. Employee education is crucial for maintaining strong security posture."
     }
   ];
 
@@ -121,6 +148,28 @@ const Cybersecurity = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

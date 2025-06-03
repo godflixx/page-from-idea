@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle, Users, Settings, Shield, Globe, Zap, Code, Database } from "lucide-react";
 
 const ApplicationDevelopment = () => {
@@ -82,6 +82,33 @@ const ApplicationDevelopment = () => {
     {
       title: "Deployment and Maintenance",
       description: "The Deployment and Maintenance phase ensures your application goes live smoothly and continues to perform optimally. We handle the complete deployment process, including server setup, configuration, and monitoring. Our ongoing maintenance services include regular updates, security patches, performance optimization, and technical support to keep your application running efficiently."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What types of applications do you develop?",
+      answer: "We develop various types of applications including web applications, mobile apps (iOS and Android), desktop applications, and enterprise software solutions. Our expertise covers both native and cross-platform development using modern frameworks and technologies."
+    },
+    {
+      question: "How long does it take to develop a custom application?",
+      answer: "Development time varies based on complexity, features, and requirements. Simple applications may take 2-3 months, while complex enterprise solutions can take 6-12 months or more. We provide detailed timelines during the consultation phase after understanding your specific needs."
+    },
+    {
+      question: "Do you provide ongoing support and maintenance?",
+      answer: "Yes, we offer comprehensive post-launch support including bug fixes, updates, performance monitoring, security patches, and feature enhancements. We provide different maintenance packages to suit your needs and budget."
+    },
+    {
+      question: "Can you integrate with existing systems?",
+      answer: "Absolutely! We specialize in seamless integration with existing systems, databases, APIs, and third-party services. We ensure your new application works harmoniously with your current technology stack and business processes."
+    },
+    {
+      question: "What technologies do you use for development?",
+      answer: "We use cutting-edge technologies including React, Angular, Python, Django, React Native, Flutter, Node.js, and cloud platforms like AWS and Azure. We select the best technology stack based on your specific requirements and goals."
+    },
+    {
+      question: "How do you ensure application security?",
+      answer: "Security is built into every stage of development. We implement encryption, secure authentication, regular security audits, OWASP guidelines, and follow industry best practices. We also conduct penetration testing and vulnerability assessments."
     }
   ];
 
@@ -336,6 +363,28 @@ const ApplicationDevelopment = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked <span className="text-accent">Questions</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-accent">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
