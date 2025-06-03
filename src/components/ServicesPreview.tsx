@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ServicesPreview = () => {
   const [selectedService, setSelectedService] = useState(0);
@@ -13,42 +14,48 @@ const ServicesPreview = () => {
       content: {
         title: "Mobile App Development",
         description: "We create innovative mobile applications that deliver exceptional user experiences across iOS and Android platforms. Our team specializes in native and cross-platform development using cutting-edge technologies like React Native and Flutter. From concept to deployment, we ensure your mobile app stands out in the competitive marketplace with intuitive design, robust functionality, and seamless performance."
-      }
+      },
+      link: "/services/mobile-applications"
     },
     {
       title: "Application Development",
       content: {
         title: "Application Development", 
         description: "Our comprehensive application development services cover everything from web applications to enterprise software solutions. We leverage modern frameworks and best practices to build scalable, secure, and maintainable applications that drive business growth. Whether you need a simple web app or a complex enterprise system, our experienced developers deliver solutions tailored to your specific requirements."
-      }
+      },
+      link: "/services/application-development"
     },
     {
       title: "DevOps",
       content: {
         title: "DevOps",
         description: "Streamline your development and deployment processes with our DevOps expertise. We implement continuous integration and continuous deployment (CI/CD) pipelines, infrastructure automation, and monitoring solutions that enhance collaboration between development and operations teams. Our DevOps practices reduce deployment time, improve reliability, and enable faster time-to-market for your applications."
-      }
+      },
+      link: "/services/devops"
     },
     {
       title: "Certified Google Cloud Partner",
       content: {
         title: "Certified Google Cloud Partner",
         description: "As a certified Google Cloud Partner, we provide expert cloud solutions and migration services. Our team helps businesses leverage Google Cloud Platform's powerful infrastructure, machine learning capabilities, and data analytics tools. From cloud architecture design to implementation and optimization, we ensure your cloud journey is smooth, secure, and cost-effective."
-      }
+      },
+      link: "/services/cloud-solutions"
     },
     {
       title: "Managed Services",
       content: {
         title: "Managed Services",
         description: "Focus on your core business while we handle your IT infrastructure. Our managed services include 24/7 monitoring, maintenance, security management, and technical support. We proactively identify and resolve issues before they impact your business, ensuring optimal performance, security, and reliability of your IT systems with predictable monthly costs."
-      }
+      },
+      link: "/services/managed-services"
     },
     {
       title: "IT Staffing",
       content: {
         title: "IT Staffing",
         description: "We provide a wide range of IT Staffing services to help companies efficiently source top-tier technology professionals across various specialties and industries. Whether you need a temporary, contract, or permanent position filled, we offer access to a deep pool of highly experienced and vetted IT experts. We specialize in connecting businesses with skilled professionals in software development, network engineering, cybersecurity, data analytics, cloud computing, and project management. Our personalized approach ensures we understand your specific needs and provide candidates who perfectly align with your goals, culture, and long-term vision. Chipsy's IT Staffing solutions make accessing talent seamless and cost-effective."
-      }
+      },
+      link: "/services/it-staffing"
     }
   ];
 
@@ -111,10 +118,12 @@ const ServicesPreview = () => {
                     {services[selectedService].content.description}
                   </p>
                   
-                  <Button className="bg-accent hover:bg-accent-700 text-white px-6 py-3 font-semibold transition-all duration-300">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link to={services[selectedService].link}>
+                    <Button className="bg-accent hover:bg-accent-700 text-white px-6 py-3 font-semibold transition-all duration-300">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -123,10 +132,12 @@ const ServicesPreview = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button className="bg-accent hover:bg-accent-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-            View All Services
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <Link to="/services">
+            <Button className="bg-accent hover:bg-accent-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
