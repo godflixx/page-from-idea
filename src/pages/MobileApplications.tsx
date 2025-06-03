@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,6 +18,26 @@ const MobileApplications = () => {
     "Regular Updates: Easy deployment of updates and new features.",
     "Responsive UI/UX: Intuitive interfaces designed for mobile-first experience.",
     "Third-Party Integrations: Seamless integration with popular services and APIs."
+  ];
+
+  const programmingLanguages = [
+    { name: "Swift", description: "Native iOS development for optimal performance" },
+    { name: "Kotlin", description: "Modern Android development with enhanced safety" },
+    { name: "Dart", description: "Flutter framework for cross-platform development" },
+    { name: "JavaScript", description: "React Native for hybrid mobile applications" },
+    { name: "Java", description: "Traditional Android development and enterprise apps" },
+    { name: "Objective-C", description: "Legacy iOS development and framework integration" }
+  ];
+
+  const tools = [
+    { name: "React Native", description: "Cross-platform mobile app development framework" },
+    { name: "Flutter", description: "Google's UI toolkit for native mobile apps" },
+    { name: "Xcode", description: "Apple's integrated development environment for iOS" },
+    { name: "Android Studio", description: "Official IDE for Android app development" },
+    { name: "Firebase", description: "Backend services and real-time database" },
+    { name: "TestFlight", description: "Beta testing platform for iOS applications" },
+    { name: "Fastlane", description: "Automated deployment and testing tools" },
+    { name: "Expo", description: "Platform for universal React applications" }
   ];
 
   const whyChoose = [
@@ -103,6 +124,44 @@ const MobileApplications = () => {
                 <Smartphone className="w-32 h-32 text-accent" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programming Languages */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Core <span className="text-accent">Programming Languages</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programmingLanguages.map((lang, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{lang.name}</h3>
+                  <p className="text-muted-foreground text-sm">{lang.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Technologies */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Tools & <span className="text-accent">Technologies</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((tool, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{tool.name}</h3>
+                  <p className="text-muted-foreground text-sm">{tool.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

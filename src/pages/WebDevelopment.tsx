@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,6 +18,26 @@ const WebDevelopment = () => {
     "Scalable Architecture: Built to handle growth and increasing traffic demands.",
     "Content Management: Easy-to-use CMS for effortless content updates and management.",
     "Analytics Integration: Built-in tracking and analytics for data-driven decisions."
+  ];
+
+  const programmingLanguages = [
+    { name: "JavaScript", description: "Modern ES6+ for dynamic and interactive web applications" },
+    { name: "TypeScript", description: "Type-safe JavaScript for large-scale applications" },
+    { name: "HTML5", description: "Semantic markup for modern web standards" },
+    { name: "CSS3", description: "Advanced styling with animations and responsive design" },
+    { name: "PHP", description: "Server-side scripting for dynamic web content" },
+    { name: "Python", description: "Backend development with Django and Flask" }
+  ];
+
+  const tools = [
+    { name: "React", description: "Component-based UI library for interactive interfaces" },
+    { name: "Next.js", description: "Full-stack React framework with SSR and SSG" },
+    { name: "Node.js", description: "JavaScript runtime for server-side development" },
+    { name: "Tailwind CSS", description: "Utility-first CSS framework for rapid styling" },
+    { name: "Webpack", description: "Module bundler for optimized asset delivery" },
+    { name: "Git", description: "Version control system for collaborative development" },
+    { name: "Docker", description: "Containerization for consistent deployment" },
+    { name: "AWS/Vercel", description: "Cloud platforms for hosting and deployment" }
   ];
 
   const whyChoose = [
@@ -103,6 +124,44 @@ const WebDevelopment = () => {
                 <Globe className="w-32 h-32 text-accent" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programming Languages */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Core <span className="text-accent">Programming Languages</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programmingLanguages.map((lang, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{lang.name}</h3>
+                  <p className="text-muted-foreground text-sm">{lang.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Technologies */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Tools & <span className="text-accent">Technologies</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((tool, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{tool.name}</h3>
+                  <p className="text-muted-foreground text-sm">{tool.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

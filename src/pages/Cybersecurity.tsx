@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,6 +18,26 @@ const Cybersecurity = () => {
     "Identity Management: Secure identity and access management solutions.",
     "Backup & Recovery: Secure backup solutions for business continuity planning.",
     "24/7 Monitoring: Continuous security monitoring and threat detection services."
+  ];
+
+  const programmingLanguages = [
+    { name: "Python", description: "Security automation and penetration testing scripts" },
+    { name: "C/C++", description: "Low-level security tools and system programming" },
+    { name: "PowerShell", description: "Windows security administration and automation" },
+    { name: "Bash", description: "Linux security scripting and system administration" },
+    { name: "JavaScript", description: "Web application security testing and analysis" },
+    { name: "Go", description: "Security tools development and cloud security" }
+  ];
+
+  const tools = [
+    { name: "Wireshark", description: "Network protocol analyzer for traffic inspection" },
+    { name: "Metasploit", description: "Penetration testing framework for vulnerability assessment" },
+    { name: "Nmap", description: "Network discovery and security auditing tool" },
+    { name: "OWASP ZAP", description: "Web application security testing proxy" },
+    { name: "Splunk", description: "Security information and event management (SIEM)" },
+    { name: "Burp Suite", description: "Web application security testing platform" },
+    { name: "Nessus", description: "Vulnerability scanner for network security assessment" },
+    { name: "CrowdStrike", description: "Endpoint detection and response platform" }
   ];
 
   const whyChoose = [
@@ -103,6 +124,44 @@ const Cybersecurity = () => {
                 <Shield className="w-32 h-32 text-accent" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programming Languages */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Core <span className="text-accent">Programming Languages</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programmingLanguages.map((lang, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{lang.name}</h3>
+                  <p className="text-muted-foreground text-sm">{lang.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Technologies */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Tools & <span className="text-accent">Technologies</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((tool, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{tool.name}</h3>
+                  <p className="text-muted-foreground text-sm">{tool.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

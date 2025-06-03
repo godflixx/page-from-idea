@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,6 +18,25 @@ const AIMachineLearning = () => {
     "Improved Accuracy: Machine learning reduces human errors in data processing and analysis.",
     "Competitive Advantage: AI implementation gives businesses an edge in their respective markets.",
     "Cost Reduction: Automation and optimization lead to significant operational cost savings."
+  ];
+
+  const programmingLanguages = [
+    { name: "Python", description: "Primary language for AI/ML development with extensive libraries" },
+    { name: "R", description: "Statistical computing and data analysis" },
+    { name: "JavaScript", description: "AI integration in web applications" },
+    { name: "SQL", description: "Database management and data querying" },
+    { name: "Scala", description: "Big data processing and distributed computing" }
+  ];
+
+  const tools = [
+    { name: "TensorFlow", description: "Open-source machine learning framework" },
+    { name: "PyTorch", description: "Deep learning research and production" },
+    { name: "Scikit-learn", description: "Machine learning library for Python" },
+    { name: "Jupyter Notebooks", description: "Interactive development environment" },
+    { name: "Apache Spark", description: "Large-scale data processing" },
+    { name: "Docker", description: "Containerization for ML model deployment" },
+    { name: "Kubernetes", description: "Container orchestration for scalable AI" },
+    { name: "AWS SageMaker", description: "Cloud-based machine learning platform" }
   ];
 
   const whyChoose = [
@@ -103,6 +123,44 @@ const AIMachineLearning = () => {
                 <Brain className="w-32 h-32 text-accent" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programming Languages */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Core <span className="text-accent">Programming Languages</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programmingLanguages.map((lang, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{lang.name}</h3>
+                  <p className="text-muted-foreground text-sm">{lang.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Technologies */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
+            Tools & <span className="text-accent">Technologies</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((tool, index) => (
+              <Card key={index} className="bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{tool.name}</h3>
+                  <p className="text-muted-foreground text-sm">{tool.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
