@@ -1,6 +1,8 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProgrammingLanguages from "@/components/ProgrammingLanguages";
+import ToolsTechnologies from "@/components/ToolsTechnologies";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -128,42 +130,10 @@ const AIMachineLearning = () => {
       </section>
 
       {/* Programming Languages */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
-            Core <span className="text-accent">Programming Languages</span>
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programmingLanguages.map((lang, index) => (
-              <Card key={index} className="bg-card">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-foreground mb-2">{lang.name}</h3>
-                  <p className="text-muted-foreground text-sm">{lang.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProgrammingLanguages languages={programmingLanguages} />
 
       {/* Tools & Technologies */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
-            Tools & <span className="text-accent">Technologies</span>
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tools.map((tool, index) => (
-              <Card key={index} className="bg-card">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-foreground mb-2">{tool.name}</h3>
-                  <p className="text-muted-foreground text-sm">{tool.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ToolsTechnologies tools={tools} />
 
       {/* Key Benefits */}
       <section className="py-16 bg-muted/30">
