@@ -43,7 +43,7 @@ const HeroSection = () => {
               <Code className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
               About A.I.WORLD
             </Button>
-            <Button variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 px-10 py-4 text-lg font-semibold transition-all duration-300 group rounded-full backdrop-blur-sm">
+            <Button variant="outline" className="border-2 border-white/60 text-white hover:bg-white/20 hover:border-white/80 px-10 py-4 text-lg font-semibold transition-all duration-300 group rounded-full backdrop-blur-sm bg-white/10">
               <Mail className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
               Contact Us
             </Button>

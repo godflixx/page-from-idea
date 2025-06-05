@@ -79,7 +79,7 @@ const Header = () => {
             <ThemeToggle />
             <Button 
               variant="outline" 
-              className="border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 transition-all backdrop-blur-sm"
+              className="border-2 border-white/60 text-white hover:bg-white/20 hover:border-white/80 transition-all backdrop-blur-sm bg-white/10"
             >
               Estimate Your Project
             </Button>
