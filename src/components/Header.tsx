@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
@@ -14,6 +13,7 @@ import {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isMainPage = location.pathname === "/";
 
   const toggleMobileMenu = () => {
@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
-    window.location.reload();
+    navigate("/");
   };
 
   const services = [
