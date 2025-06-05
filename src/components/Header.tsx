@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
@@ -13,6 +13,8 @@ import {
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -31,8 +33,44 @@ const Header = () => {
     { name: "Cybersecurity", href: "/services/cybersecurity" },
   ];
 
+  // Different styles for main page vs other pages
+  const getHeaderStyles = () => {
+    if (isMainPage) {
+      return "absolute top-0 left-0 right-0 z-50 w-full bg-transparent backdrop-blur-sm";
+    }
+    return "absolute top-0 left-0 right-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/50";
+  };
+
+  const getLogoStyles = () => {
+    if (isMainPage) {
+      return "text-white text-xl lg:text-2xl font-bold";
+    }
+    return "text-gray-900 dark:text-white text-xl lg:text-2xl font-bold";
+  };
+
+  const getNavLinkStyles = () => {
+    if (isMainPage) {
+      return "text-white/90 hover:text-white transition-colors font-medium";
+    }
+    return "text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white transition-colors font-medium";
+  };
+
+  const getEstimateButtonStyles = () => {
+    if (isMainPage) {
+      return "border-2 border-white/60 text-white hover:bg-white/20 hover:border-white/80 transition-all backdrop-blur-sm bg-white/10";
+    }
+    return "border-2 border-gray-400 dark:border-white/60 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/20 hover:border-gray-600 dark:hover:border-white/80 transition-all backdrop-blur-sm bg-gray-50 dark:bg-white/10";
+  };
+
+  const getMobileButtonStyles = () => {
+    if (isMainPage) {
+      return "text-white hover:bg-white/10";
+    }
+    return "text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10";
+  };
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent backdrop-blur-sm">
+    <header className={getHeaderStyles()}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -40,18 +78,18 @@ const Header = () => {
             <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
               <div className="w-5 h-5 bg-white rounded-full"></div>
             </div>
-            <span className="text-white dark:text-white text-gray-900 text-xl lg:text-2xl font-bold">A.I.WORLD</span>
+            <span className={getLogoStyles()}>A.I.WORLD</span>
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/about" className="text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
+            <Link to="/about" className={getNavLinkStyles()}>
               About
             </Link>
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
+              <DropdownMenuTrigger className={`flex items-center ${getNavLinkStyles()}`}>
                 Services
                 <ChevronDown className="w-4 h-4 ml-1" />
               </DropdownMenuTrigger>
@@ -69,7 +107,7 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/case-studies" className="text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
+            <Link to="/case-studies" className={getNavLinkStyles()}>
               Case Studies
             </Link>
           </nav>
@@ -79,7 +117,7 @@ const Header = () => {
             <ThemeToggle />
             <Button 
               variant="outline" 
-              className="border-2 border-white/60 dark:border-white/60 border-gray-400 text-white dark:text-white text-gray-700 hover:bg-white/20 dark:hover:bg-white/20 hover:bg-gray-100 hover:border-white/80 dark:hover:border-white/80 hover:border-gray-600 transition-all backdrop-blur-sm bg-white/10 dark:bg-white/10 bg-white/20"
+              className={getEstimateButtonStyles()}
             >
               Estimate Your Project
             </Button>
@@ -94,7 +132,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-white dark:text-white text-gray-700 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-gray-100"
+              className={getMobileButtonStyles()}
               onClick={toggleMobileMenu}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
