@@ -40,18 +40,18 @@ const Header = () => {
             <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
               <div className="w-5 h-5 bg-white rounded-full"></div>
             </div>
-            <span className="text-white text-xl lg:text-2xl font-bold">A.I.WORLD</span>
+            <span className="text-white dark:text-white text-gray-900 text-xl lg:text-2xl font-bold">A.I.WORLD</span>
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/about" className="text-white/90 hover:text-white transition-colors font-medium">
+            <Link to="/about" className="text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
               About
             </Link>
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white/90 hover:text-white transition-colors font-medium">
+              <DropdownMenuTrigger className="flex items-center text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
                 Services
                 <ChevronDown className="w-4 h-4 ml-1" />
               </DropdownMenuTrigger>
@@ -69,7 +69,7 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/case-studies" className="text-white/90 hover:text-white transition-colors font-medium">
+            <Link to="/case-studies" className="text-white/90 dark:text-white/90 text-gray-700 hover:text-white dark:hover:text-white hover:text-gray-900 transition-colors font-medium">
               Case Studies
             </Link>
           </nav>
@@ -79,7 +79,7 @@ const Header = () => {
             <ThemeToggle />
             <Button 
               variant="outline" 
-              className="border-2 border-white/60 text-white hover:bg-white/20 hover:border-white/80 transition-all backdrop-blur-sm bg-white/10"
+              className="border-2 border-white/60 dark:border-white/60 border-gray-400 text-white dark:text-white text-gray-700 hover:bg-white/20 dark:hover:bg-white/20 hover:bg-gray-100 hover:border-white/80 dark:hover:border-white/80 hover:border-gray-600 transition-all backdrop-blur-sm bg-white/10 dark:bg-white/10 bg-white/20"
             >
               Estimate Your Project
             </Button>
@@ -94,7 +94,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-white/10"
+              className="text-white dark:text-white text-gray-700 hover:bg-white/10 dark:hover:bg-white/10 hover:bg-gray-100"
               onClick={toggleMobileMenu}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
