@@ -9,7 +9,7 @@ const CaseStudies = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-background via-accent/5 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Case <span className="text-accent">Studies</span>
