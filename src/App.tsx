@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
+import Admin from "./pages/Admin";
 import ApplicationDevelopment from "./pages/ApplicationDevelopment";
 import AIMachineLearning from "./pages/AIMachineLearning";
 import WebDevelopment from "./pages/WebDevelopment";
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/services/application-development" element={<ApplicationDevelopment />} />
             <Route path="/services/ai-machine-learning" element={<AIMachineLearning />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
